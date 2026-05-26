@@ -2,228 +2,143 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>⚡ ECOSISTEMA EDUARDO</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECOSISTEMA EDUARDO</title>
 <style>
-:root{--bg:#000;--s1:#0a0a0a;--txt:#fff;--muted:#666;--g:#00ff88;--r:#ff3333;--a:#ffaa00;--b:#00aaff;--pk:#ff4488;--gw:0 0 16px rgba(0,255,136,0.5);--rw:0 0 16px rgba(255,51,51,0.5);--aw:0 0 16px rgba(255,170,0,0.5);--bw:0 0 16px rgba(0,170,255,0.5);--pkw:0 0 16px rgba(255,68,136,0.5);}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--txt);font-family:'Unbounded',sans-serif;min-height:100vh;}
-.app{display:grid;grid-template-rows:60px 1fr 50px;min-height:100vh;}
-.top{display:flex;justify-content:space-between;align-items:center;padding:0 18px;background:var(--s1);border-bottom:2px solid var(--g);box-shadow:var(--gw);}
-.clock{font-family:'Space Mono',monospace;font-size:26px;color:var(--g);text-shadow:var(--gw);font-weight:700;}
-.label{font-size:7px;color:var(--muted);letter-spacing:.3em;text-transform:uppercase;}
-.main{padding:16px;display:flex;flex-direction:column;gap:14px;padding-bottom:60px;}
-.sec-title{font-size:8px;font-weight:700;letter-spacing:.3em;color:var(--g);text-shadow:var(--gw);margin-top:8px;margin-bottom:4px;}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.card{background:var(--s1);border:2px solid var(--b);border-radius:14px;padding:14px;box-shadow:var(--bw);}
-.card.green{border-color:var(--g);box-shadow:var(--gw);}
-.card.red{border-color:var(--r);box-shadow:var(--rw);}
-.card.amber{border-color:var(--a);box-shadow:var(--aw);}
-.card.pink{border-color:var(--pk);box-shadow:var(--pkw);}
-.card-l{font-size:7px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px;}
-.card-v{font-family:'Space Mono',monospace;font-size:20px;font-weight:700;}
-.card-v.green{color:var(--g);text-shadow:var(--gw);}
-.card-v.red{color:var(--r);text-shadow:var(--rw);}
-.card-v.amber{color:var(--a);text-shadow:var(--aw);}
-.card-v.blue{color:var(--b);text-shadow:var(--bw);}
-.card-v.pink{color:var(--pk);text-shadow:var(--pkw);}
-.card-d{font-size:9px;color:var(--muted);margin-top:6px;line-height:1.4;}
-.task{display:flex;gap:10px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.05);align-items:flex-start;}
-.task:last-child{border-bottom:none;}
-.task-bar{width:3px;background:var(--a);border-radius:2px;flex-shrink:0;align-self:stretch;}
-.task.p1 .task-bar{background:var(--r);}
-.task-content{flex:1;}
-.task-title{font-size:11px;font-weight:700;line-height:1.3;margin-bottom:3px;}
-.task-meta{font-size:7px;color:var(--muted);letter-spacing:.1em;}
-.proj-card{background:var(--s1);border:2px solid;border-radius:14px;padding:14px;}
-.proj-name{font-size:16px;font-weight:900;}
-.proj-val{font-family:'Space Mono',monospace;font-size:13px;margin-top:4px;font-weight:700;}
-.proj-d{font-size:9px;color:var(--muted);margin-top:6px;line-height:1.4;}
-.flag-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--s1);border:2px solid;border-radius:12px;margin-bottom:8px;}
-.flag-row.green{border-color:var(--g);}
-.flag-row.red{border-color:var(--r);}
-.flag-l{font-size:11px;font-weight:700;flex:1;}
-.flag-v{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;}
-.evt{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:var(--s1);border:2px solid;border-radius:12px;margin-bottom:8px;}
-.evt.green{border-color:var(--g);}
-.evt.amber{border-color:var(--a);}
-.evt.blue{border-color:var(--b);}
-.evt-t{font-size:11px;font-weight:700;}
-.evt-d{font-size:9px;color:var(--muted);margin-top:3px;}
-.evt-time{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;}
-.bot{display:flex;justify-content:space-between;align-items:center;padding:0 18px;background:var(--s1);border-top:2px solid var(--g);box-shadow:var(--gw);font-size:7px;color:var(--muted);letter-spacing:.2em;}
-.refresh-btn{background:transparent;border:2px solid var(--g);color:var(--g);padding:5px 12px;border-radius:18px;cursor:pointer;font-size:7px;font-weight:700;letter-spacing:.15em;font-family:'Unbounded',sans-serif;}
-.refresh-btn:active{transform:scale(0.95);}
-.sync-status{display:flex;align-items:center;gap:6px;}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
-.loading{text-align:center;padding:30px;font-size:9px;color:var(--muted);}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+.header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #0f0; padding-bottom: 20px; }
+.time { font-size: 48px; font-weight: bold; color: #0f0; font-family: monospace; margin: 10px 0; text-shadow: 0 0 10px #0f0; }
+.section { margin-bottom: 30px; }
+.title { font-size: 18px; font-weight: bold; color: #0f0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
+.card { background: #111; border: 2px solid #0f0; border-radius: 8px; padding: 15px; margin-bottom: 10px; }
+.card.red { border-color: #f00; }
+.card.orange { border-color: #fa0; }
+.card.blue { border-color: #0af; }
+.card.pink { border-color: #f4f; }
+.value { font-size: 32px; font-weight: bold; margin: 10px 0; font-family: monospace; }
+.value.green { color: #0f0; }
+.value.red { color: #f00; }
+.value.orange { color: #fa0; }
+.value.blue { color: #0af; }
+.desc { font-size: 12px; color: #999; margin-top: 8px; }
+.task { background: #111; border-left: 4px solid #fa0; padding: 12px; margin-bottom: 8px; border-radius: 4px; }
+.task.p1 { border-left-color: #f00; }
+.flag { background: #111; border: 2px solid; border-radius: 6px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; }
+.flag.green { border-color: #0f0; }
+.flag.red { border-color: #f00; }
+.sync { text-align: center; margin-top: 40px; font-size: 12px; color: #666; }
 </style>
 </head>
 <body>
-<div class="app">
 
-<div class="top">
-  <div>
-    <div class="label">⚡ ECOSISTEMA</div>
-    <div class="clock" id="clock">00:00:00</div>
-  </div>
-  <div style="text-align:right;">
-    <div class="label">EN VIVO</div>
-    <div style="font-size:18px;font-weight:900;color:var(--a);text-shadow:var(--aw);" id="taskCount">—</div>
-  </div>
+<div class="header">
+  <div style="font-size: 12px; color: #999; letter-spacing: 3px;">⚡ ECOSISTEMA</div>
+  <div class="time" id="time">09:21:37</div>
+  <div style="font-size: 14px; color: #0f0;">MARTES 26 MAYO 2026</div>
 </div>
 
-<div class="main">
-
-<div class="sec-title">💰 FINANZAS MAYO</div>
-<div class="grid2">
-  <div class="card green">
-    <div class="card-l">Ingresos</div>
-    <div class="card-v green">$4.93M</div>
-    <div class="card-d">SETTE + familia</div>
+<div class="section">
+  <div class="title">💰 FINANZAS MAYO</div>
+  <div class="card">
+    <div style="font-size: 11px; color: #999;">INGRESOS</div>
+    <div class="value green">$4.93M</div>
+    <div class="desc">SETTE + Familia</div>
   </div>
   <div class="card red">
-    <div class="card-l">Gastos fijos</div>
-    <div class="card-v red">$3.85M</div>
-    <div class="card-d">Arriendo + Servicios + MA</div>
+    <div style="font-size: 11px; color: #999;">GASTOS FIJOS</div>
+    <div class="value red">$3.85M</div>
+    <div class="desc">Arriendo + Servicios + MA</div>
   </div>
-  <div class="card amber">
-    <div class="card-l">Excedente</div>
-    <div class="card-v amber">$1.08M</div>
-    <div class="card-d">Antes variables</div>
+  <div class="card orange">
+    <div style="font-size: 11px; color: #999;">EXCEDENTE</div>
+    <div class="value orange">$1.08M</div>
+    <div class="desc">Antes variables</div>
   </div>
-  <div class="card">
-    <div class="card-l">Saldo BoA</div>
-    <div class="card-v blue">$1,495</div>
-    <div class="card-d">USD</div>
+  <div class="card blue">
+    <div style="font-size: 11px; color: #999;">SALDO BOA</div>
+    <div class="value blue">$1,495 USD</div>
   </div>
 </div>
 
-<div class="sec-title">🎯 PROYECTOS ACTIVOS</div>
-<div class="proj-card" style="border-color:var(--a);box-shadow:var(--aw);">
-  <div class="proj-name" style="color:var(--a);">SETTE</div>
-  <div class="proj-val" style="color:var(--a);">$5.65M/mes</div>
-  <div class="proj-d">Fee mensual. Pauta $7.3M aprobada. Reunión Miguel HOY 2:30pm</div>
-</div>
-<div class="proj-card" style="border-color:var(--a);box-shadow:var(--aw);">
-  <div class="proj-name" style="color:var(--a);">DOBLE AA</div>
-  <div class="proj-val" style="color:var(--a);">$500K + 12%</div>
-  <div class="proj-d">Reunión HOY 5pm. Lanzamiento "Estoy Bien" 16 jun</div>
-</div>
-<div class="proj-card" style="border-color:var(--pk);box-shadow:var(--pkw);">
-  <div class="proj-name" style="color:var(--pk);">GIULIA <span style="font-size:9px;background:var(--r);color:#fff;padding:2px 6px;border-radius:4px;margin-left:6px;">URGENTE</span></div>
-  <div class="proj-val" style="color:var(--pk);">Lanzamiento 29 mayo</div>
-  <div class="proj-d">⚠ Contactar Virgin HOY para inscripción Grammy</div>
-</div>
-<div class="proj-card" style="border-color:var(--b);box-shadow:var(--bw);">
-  <div class="proj-name" style="color:var(--b);">ANDY G</div>
-  <div class="proj-val" style="color:var(--b);">Licencia Totoy</div>
-  <div class="proj-d">VINCERE Electro / Farolatino. Formalizar licencia</div>
-</div>
-
-<div class="sec-title">📅 EVENTOS HOY</div>
-<div class="evt blue">
-  <div>
-    <div class="evt-t">Reunión Miguel SETTE KPI</div>
-    <div class="evt-d">Definir KPIs pauta $7.3M</div>
+<div class="section">
+  <div class="title">🎯 PROYECTOS</div>
+  <div class="card orange">
+    <div style="font-size: 20px; font-weight: 900; color: #fa0;">SETTE</div>
+    <div class="value orange">$5.65M/mes</div>
+    <div class="desc">Fee mensual. Pauta $7.3M aprobada. KPI HOY 2:30pm con Miguel</div>
   </div>
-  <div class="evt-time" style="color:var(--b);">2:30 PM</div>
-</div>
-<div class="evt amber">
-  <div>
-    <div class="evt-t">Reunión DOBLE AA</div>
-    <div class="evt-d">Fee + acuerdo</div>
+  <div class="card orange">
+    <div style="font-size: 20px; font-weight: 900; color: #fa0;">DOBLE AA</div>
+    <div class="value orange">$500K + 12%</div>
+    <div class="desc">Reunión HOY 5pm. Lanzamiento "Estoy Bien" 16 junio</div>
   </div>
-  <div class="evt-time" style="color:var(--a);">5:00 PM</div>
-</div>
-
-<div class="sec-title">📋 TAREAS HOY/VENCIDAS</div>
-<div class="card amber" id="tasksContainer">
-  <div class="loading">Cargando tareas EN VIVO...</div>
-</div>
-
-<div class="sec-title">🚩 FLAGS</div>
-<div class="flag-row green">
-  <div class="flag-l">✓ Pauta SETTE aprobada</div>
-  <div class="flag-v" style="color:var(--g);">$7.3M</div>
-</div>
-<div class="flag-row red">
-  <div class="flag-l">✗ Clipper's sin respuesta</div>
-  <div class="flag-v" style="color:var(--r);">4 días</div>
-</div>
-<div class="flag-row red">
-  <div class="flag-l">✗ Streams DOBLE AA</div>
-  <div class="flag-v" style="color:var(--r);">24K/60K</div>
-</div>
-
-</div>
-
-<div class="bot">
-  <div class="sync-status">
-    <div class="dot"></div>
-    <span>SYNC ACTIVO</span>
+  <div class="card pink">
+    <div style="font-size: 20px; font-weight: 900; color: #f4f;">GIULIA 🔴 URGENTE</div>
+    <div class="value pink">Lanzamiento 29 mayo</div>
+    <div class="desc">⚠️ Contactar VIRGIN HOY para Grammy</div>
   </div>
-  <button class="refresh-btn" onclick="loadAll()">↻ Actualizar</button>
-  <div style="font-size:6px;">v3 · <span id="lastUpdate">—</span></div>
+  <div class="card blue">
+    <div style="font-size: 20px; font-weight: 900; color: #0af;">ANDY G</div>
+    <div class="value blue">Licencia Totoy</div>
+    <div class="desc">VINCERE Electro. Formalizar con Farolatino</div>
+  </div>
 </div>
 
+<div class="section">
+  <div class="title">📅 EVENTOS HOY</div>
+  <div class="flag blue">
+    <div><strong>Reunión Miguel SETTE KPI</strong><br><span class="desc">Pauta $7.3M</span></div>
+    <div style="font-size: 16px; font-weight: bold; color: #0af;">2:30 PM</div>
+  </div>
+  <div class="flag orange">
+    <div><strong>Reunión DOBLE AA</strong><br><span class="desc">Fee + Acuerdo</span></div>
+    <div style="font-size: 16px; font-weight: bold; color: #fa0;">5:00 PM</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="title">📋 TAREAS (15 TOTAL)</div>
+  <div class="task p1">🎵 GIULIA - Contactar Virgin Grammy <span style="color: #f00;">[P1 VENCIDA]</span></div>
+  <div class="task p1">📞 MARCEL SELVA - Clipper's TORTTURA <span style="color: #f00;">[P1 VENCIDA 4 DÍAS]</span></div>
+  <div class="task p1">📞 JUAN MAGAN - Taganga/HOKAI <span style="color: #f00;">[P1 HOY]</span></div>
+  <div class="task">📊 MONEYFY - Exportar CSV</div>
+  <div class="task">🎵 CUESTIONARIO - Música/Startups</div>
+  <div class="task">👁️ DOBLE AA - Análisis métricas</div>
+  <div class="task">📋 FINANZAS - Revisar pagos</div>
+  <div class="task">📋 ANDY G - Licencia Totoy</div>
+</div>
+
+<div class="section">
+  <div class="title">🚩 FLAGS</div>
+  <div class="flag green">
+    <div><strong>✓ Pauta SETTE aprobada</strong></div>
+    <div style="color: #0f0;">$7.3M</div>
+  </div>
+  <div class="flag red">
+    <div><strong>✗ Clipper's sin respuesta</strong></div>
+    <div style="color: #f00;">4 días</div>
+  </div>
+  <div class="flag red">
+    <div><strong>✗ Streams DOBLE AA</strong></div>
+    <div style="color: #f00;">24K/60K (40%)</div>
+  </div>
+</div>
+
+<div class="sync">
+  ✓ Dashboard actualizado 26 mayo 09:21 | <a href="#" style="color: #0f0; text-decoration: none;" onclick="location.reload(); return false;">↻ Refrescar</a>
 </div>
 
 <script>
-const TASKS = [
-  {emoji:"🎵",title:"GIULIA - Contactar Virgin: Grammy",priority:"p1",meta:"P1 · VENCIDA"},
-  {emoji:"🎵",title:"GIULIA - Detalles lanzamiento 29 mayo",priority:"p1",meta:"P1 · VENCIDA"},
-  {emoji:"📞",title:"PUSH MARCEL SELVA - Clipper's TORTTURA",priority:"p1",meta:"P1 · VENCIDA 4 días"},
-  {emoji:"📞",title:"PUSH JUAN MAGAN - Taganga/HOKAI",priority:"p1",meta:"P1 · HOY"},
-  {emoji:"📞",title:"JUAN MAGAN - Seguimiento correo 21 may",priority:"p1",meta:"P1 · HOY"},
-  {emoji:"📊",title:"MONEYFY: Exportar CSV",priority:"p2",meta:"P2 · HOY"},
-  {emoji:"🎵",title:"CUESTIONARIO: Música/Startups/Vida",priority:"p2",meta:"P2 · HOY"},
-  {emoji:"👁️",title:"SEGUIMIENTO DOBLE AA",priority:"p2",meta:"P2 · HOY"},
-  {emoji:"📋",title:"REVISAR: Pagos semana",priority:"p2",meta:"P2 · HOY"},
-  {emoji:"💰",title:"FINANZAS - Revisar pagos",priority:"p2",meta:"P2 · VENCIDA"},
-  {emoji:"📊",title:"DOBLE AA - Análisis métricas",priority:"p2",meta:"P2 · AYER"},
-  {emoji:"📋",title:"ANDY G - Formalizar licencia Totoy",priority:"p2",meta:"P2 · AYER"},
-  {emoji:"📋",title:"ZEIWA - Enviar NDA a Alejo",priority:"p2",meta:"P2 · AYER"},
-  {emoji:"📋",title:"RAYO Y TOBI - Virgin/Guillermo",priority:"p2",meta:"P2 · AYER"},
-  {emoji:"📋",title:"PROYECTOS - L'OMY/Music Labs/Hamurabi",priority:"p2",meta:"P2 · AYER"}
-];
-
-function pad(n){return String(n).padStart(2,'0');}
-
-function updateClock(){
-  const n = new Date();
-  document.getElementById('clock').textContent = pad(n.getHours())+':'+pad(n.getMinutes())+':'+pad(n.getSeconds());
-}
-
-function renderTasks(){
-  const html = TASKS.map(t => `
-    <div class="task ${t.priority}">
-      <div class="task-bar"></div>
-      <div class="task-content">
-        <div class="task-title">${t.emoji} ${t.title}</div>
-        <div class="task-meta">${t.meta}</div>
-      </div>
-    </div>
-  `).join('');
-  document.getElementById('tasksContainer').innerHTML = html;
-  document.getElementById('taskCount').textContent = TASKS.length + ' tareas';
-}
-
-function loadAll(){
-  renderTasks();
+function updateTime() {
   const now = new Date();
-  document.getElementById('lastUpdate').textContent = pad(now.getHours())+':'+pad(now.getMinutes());
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const s = String(now.getSeconds()).padStart(2, '0');
+  document.getElementById('time').textContent = h + ':' + m + ':' + s;
 }
-
-// Init
-updateClock();
-loadAll();
-setInterval(updateClock, 1000);
-
-// Auto-refresh cada 5 min
-setInterval(loadAll, 300000);
+updateTime();
+setInterval(updateTime, 1000);
 </script>
 
 </body>

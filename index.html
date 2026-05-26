@@ -109,16 +109,12 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
 
   <div class="sec">Próximas 48h</div>
   <div class="card" id="eventsContainer" style="border-color:var(--b);box-shadow:var(--bw);">
-    <div class="ev-row"><div class="ev-time"><div class="mono cb" style="font-size:12px;">14:30</div><div style="font-size:7px;color:var(--muted);">hoy</div></div><div class="ev-dot"></div><div class="ev-content"><div style="font-weight:700;">SETTE KPI — Miguel</div><div style="color:var(--muted);margin-top:3px;">Pauta digital $7.3M</div></div></div>
-    <div class="ev-row"><div class="ev-time"><div class="mono cg" style="font-size:12px;">17:00</div><div style="font-size:7px;color:var(--muted);">hoy</div></div><div class="ev-dot" style="background:var(--g);"></div><div class="ev-content"><div style="font-weight:700;">Reunión DOBLE AA</div><div style="color:var(--muted);margin-top:3px;">Fee + acuerdo</div></div></div>
-    <div class="ev-row"><div class="ev-time"><div class="mono cp" style="font-size:12px;">TODO</div><div style="font-size:7px;color:var(--muted);">29 may</div></div><div class="ev-dot" style="background:var(--pk);"></div><div class="ev-content"><div style="font-weight:700;">LANZAMIENTO GIULIA</div><div style="color:var(--muted);margin-top:3px;">Hard release YouTube</div></div></div>
+    <div class="loading">Cargando eventos...</div>
   </div>
 
   <div class="sec">Tareas de hoy</div>
   <div class="card" id="tasksContainer" style="border-color:var(--a);box-shadow:var(--aw);">
-    <div class="task-row"><div style="width:3px;background:var(--r);border-radius:2px;flex-shrink:0;"></div><div class="tcheck"></div><div class="task-txt"><div style="font-weight:700;">GIULIA - Contactar Virgin: Grammy</div><div class="task-prio">P1</div></div></div>
-    <div class="task-row"><div style="width:3px;background:var(--r);border-radius:2px;flex-shrink:0;"></div><div class="tcheck"></div><div class="task-txt"><div style="font-weight:700;">GIULIA - Detalles lanzamiento operativos</div><div class="task-prio">P1</div></div></div>
-    <div class="task-row"><div style="width:3px;background:var(--a);border-radius:2px;flex-shrink:0;"></div><div class="tcheck"></div><div class="task-txt"><div style="font-weight:700;">PUSH MARCEL SELVA - TORTTURA feedback</div><div class="task-prio">P1</div></div></div>
+    <div class="loading">Cargando tareas...</div>
   </div>
 
   <button class="flag-btn" style="border-color:var(--g);box-shadow:var(--gw);" onclick="toggleFlag('gf')">
@@ -128,10 +124,10 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
   <div class="flag-expand" id="gf">
     <div class="flag-content" style="border-color:var(--g);">
       <div class="flag-item"><span class="cg">↑</span>Pauta SETTE $7.3M aprobada</div>
-      <div class="flag-item"><span class="cg">↑</span>Excedente $1.08M antes variables</div>
-      <div class="flag-item"><span class="cg">↑</span>11.1K oyentes Doble AA superada meta</div>
-      <div class="flag-item"><span class="cg">↑</span>Reunión Doble AA hoy 5pm (decisión)</div>
-      <div class="flag-item"><span class="cg">↑</span>SETTE KPI hoy 2:30pm activo</div>
+      <div class="flag-item"><span class="cg">↑</span>Excedente $1.08M antes de variables</div>
+      <div class="flag-item"><span class="cg">↑</span>11.1K oyentes Doble AA — meta superada</div>
+      <div class="flag-item"><span class="cg">↑</span>Reunión Doble AA hoy 5pm (fee decisión)</div>
+      <div class="flag-item"><span class="cg">↑</span>SETTE KPI hoy 2:30pm</div>
     </div>
   </div>
 
@@ -142,10 +138,10 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
   <div class="flag-expand" id="rf">
     <div class="flag-content" style="border-color:var(--r);">
       <div class="flag-item"><span class="cr">↓</span>Streams Doble AA 24K vs 60K — 40%</div>
-      <div class="flag-item"><span class="cr">↓</span>Clipper's sin respuesta 4 días</div>
-      <div class="flag-item"><span class="cr">↓</span>Farolatino lenta momentos clave</div>
-      <div class="flag-item"><span class="cr">↓</span>Taganga sin fee formalizado Pipe</div>
-      <div class="flag-item"><span class="cr">↓</span>L'OMY, Music Labs, Hamurabi indefinidos</div>
+      <div class="flag-item"><span class="cr">↓</span>Clipper's sin respuesta 4 días (Marcel)</div>
+      <div class="flag-item"><span class="cr">↓</span>Farolatino lenta en momentos clave</div>
+      <div class="flag-item"><span class="cr">↓</span>Taganga sin fee formalizado con Pipe</div>
+      <div class="flag-item"><span class="cr">↓</span>L'OMY, Music Labs, Hamurabi sin decisión</div>
     </div>
   </div>
 </div>
@@ -162,7 +158,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
 
   <div class="sec">Gastos diarios (estimado mayo)</div>
   <div class="big" style="border-color:var(--g);box-shadow:var(--gw);">
-    <div class="chart-bar">
+    <div class="chart-bar" id="gastoChart">
       <div style="flex:1;"><div class="bar" style="height:100%;"></div><div class="bar-label">L</div></div>
       <div style="flex:1;"><div class="bar" style="height:85%;"></div><div class="bar-label">M</div></div>
       <div style="flex:1;"><div class="bar" style="height:90%;"></div><div class="bar-label">M</div></div>
@@ -180,7 +176,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
     <div class="row"><div style="flex:1;font-size:11px;color:var(--muted);">Otros</div><div class="mono ca" style="font-size:13px;">$1M</div></div>
   </div>
 
-  <div style="background:rgba(255,170,0,.1);border:2px solid var(--a);border-radius:12px;padding:11px 15px;font-size:9px;color:var(--a);font-weight:700;">⚠ Variables mayo sin confirmar — revisar 24-31</div>
+  <div style="background:rgba(255,170,0,.1);border:2px solid var(--a);border-radius:12px;padding:11px 15px;font-size:9px;color:var(--a);font-weight:700;">⚠ Variables mayo aún desconocidas — revisar semana del 24-31</div>
 </div>
 
 <!-- P2: PROYECTOS -->
@@ -197,15 +193,15 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
     <div class="card gold">
       <div style="font-size:18px;font-weight:900;color:var(--a);">SETTE</div>
       <div class="mono" style="font-size:16px;margin-top:5px;color:var(--a);">$5.65M/mes</div>
-      <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Fee mensual. Pauta $7.3M aprobada. Distribuidor INDEPENDIENTE.</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--g);">✓ KPI hoy 2:30pm</div>
-      <div style="font-size:8px;color:var(--g);">✓ Pauta activa</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Fee mensual SETTE. Pauta digital $7.3M aprobada. Distribuidor INDEPENDIENTE.</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--g);">✓ KPI hoy 2:30pm con Miguel</div>
+      <div style="font-size:8px;color:var(--g);">✓ Pauta en ejecución</div>
     </div>
 
     <div class="card" style="border-color:var(--a);box-shadow:var(--aw);">
       <div style="font-size:18px;font-weight:900;color:var(--a);">DOBLE AA</div>
       <div class="mono" style="font-size:16px;margin-top:5px;color:var(--a);">$500K + 12% streams</div>
-      <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Launch "Estoy Bien" 16 junio.</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Urbano Putumayo. Launch "Estoy Bien" 16 junio.</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;">
         <div style="background:rgba(255,170,0,.05);border:1px solid rgba(255,170,0,.2);border-radius:10px;padding:8px;text-align:center;">
           <div class="mono ca" style="font-size:14px;">24K</div>
@@ -223,21 +219,21 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
       <div style="font-size:18px;font-weight:900;color:var(--pk);">GIULIA</div>
       <div class="mono" style="font-size:16px;margin-top:5px;color:var(--pk);">Lanzamiento 29 mayo</div>
       <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Hard release YouTube. Virgin. Grammy inscripción pendiente.</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Contactar Virgin HOY</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Contactar Virgin HOY — inscripción Grammy</div>
     </div>
 
     <div class="card" style="border-color:var(--b);box-shadow:var(--bw);">
       <div style="font-size:18px;font-weight:900;color:var(--b);">ANDY G</div>
       <div class="mono" style="font-size:16px;margin-top:5px;color:var(--b);">VINCERE Electro</div>
       <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Farolatino. MGM. Estudio Barranquilla.</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Formalizar licencia Totoy HOY</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Formalizar licencia Totoy El Frío HOY</div>
     </div>
 
     <div class="card" style="border-color:var(--pk);box-shadow:0 0 16px rgba(255,68,136,0.5);">
       <div style="font-size:18px;font-weight:900;color:var(--pk);">ZEIWA</div>
       <div class="mono" style="font-size:16px;margin-top:5px;color:var(--pk);">Manager</div>
       <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Alejo Arizmendi. NDA vencido.</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Enviar NDA HOY</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Enviar nuevo NDA HOY</div>
     </div>
   </div>
 
@@ -245,32 +241,32 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
   <div class="proj-panel" id="coldProj">
     <div class="card" style="border-color:var(--muted);opacity:.8;">
       <div style="font-size:16px;font-weight:900;color:var(--muted);">RAYO Y TOBI</div>
-      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Disco en producción. Virgin/Guillermo Castro interés.</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Disco en producción. Taganga. Virgin/Guillermo Castro interés.</div>
       <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Destrabar avance</div>
     </div>
 
     <div class="card" style="border-color:var(--muted);opacity:.8;">
       <div style="font-size:16px;font-weight:900;color:var(--muted);">TORTTURA</div>
-      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Demo a Clipper's. Sin respuesta 4 días.</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ PUSH Marcel HOY</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Demo entregado a Clipper's. Sin respuesta 4 días.</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ PUSH Marcel HOY — respuesta urgente</div>
     </div>
 
     <div class="card" style="border-color:var(--muted);opacity:.8;">
       <div style="font-size:16px;font-weight:900;color:var(--muted);">L'OMY</div>
-      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Inténtalo/Cole. Empire o Farolatino?</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Decisión pendiente</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Inténtalo/Cole. ¿Empire o Farolatino?</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Decisión: ¿SIGUE o CIERRA?</div>
     </div>
 
     <div class="card" style="border-color:var(--muted);opacity:.8;">
       <div style="font-size:16px;font-weight:900;color:var(--muted);">MUSIC LABS</div>
-      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Territorios: Quindío, Montería, Córdoba, Pereira.</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Decisión pendiente</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:6px;">Quindío, Montería, Córdoba, Pereira.</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Decisión: ¿SIGUE o CIERRA?</div>
     </div>
 
     <div class="card" style="border-color:var(--muted);opacity:.8;">
       <div style="font-size:16px;font-weight:900;color:var(--muted);">HAMURABI</div>
       <div style="font-size:9px;color:var(--muted);margin-top:6px;">Sin definir. Estado desconocido.</div>
-      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Decisión pendiente</div>
+      <div style="margin-top:10px;font-size:8px;color:var(--r);">⚠ Decisión: ¿SIGUE o CIERRA?</div>
     </div>
   </div>
 </div>
@@ -279,10 +275,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font
 <div class="page">
   <div class="sec">Próximos 7 días</div>
   <div class="card" id="calendarContainer" style="border-color:var(--b);box-shadow:var(--bw);">
-    <div class="ev-row"><div class="ev-time"><div class="mono cb" style="font-size:12px;">14:30</div><div style="font-size:7px;color:var(--muted);">hoy</div></div><div class="ev-dot"></div><div class="ev-content"><div style="font-weight:700;">SETTE KPI — Miguel</div><div style="color:var(--muted);margin-top:3px;">Pauta digital $7.3M</div></div></div>
-    <div class="ev-row"><div class="ev-time"><div class="mono cg" style="font-size:12px;">17:00</div><div style="font-size:7px;color:var(--muted);">hoy</div></div><div class="ev-dot" style="background:var(--g);"></div><div class="ev-content"><div style="font-weight:700;">Reunión DOBLE AA</div><div style="color:var(--muted);margin-top:3px;">Fee + acuerdo</div></div></div>
-    <div class="ev-row"><div class="ev-time"><div class="mono cp" style="font-size:12px;">TODO</div><div style="font-size:7px;color:var(--muted);">29 may</div></div><div class="ev-dot" style="background:var(--pk);"></div><div class="ev-content"><div style="font-weight:700;">LANZAMIENTO GIULIA</div><div style="color:var(--muted);margin-top:3px;">Hard release YouTube</div></div></div>
-    <div class="ev-row"><div class="ev-time"><div class="mono cb" style="font-size:12px;">9:30am</div><div style="font-size:7px;color:var(--muted);">29 may</div></div><div class="ev-dot"></div><div class="ev-content"><div style="font-weight:700;">Revisión Financiera</div><div style="color:var(--muted);margin-top:3px;">Cierre mayo</div></div></div>
+    <div class="loading">Cargando calendario...</div>
   </div>
 </div>
 
@@ -331,14 +324,9 @@ pw.addEventListener('touchmove',function(e){if(dec)return;var dx=Math.abs(e.touc
 pw.addEventListener('touchend',function(e){if(!isH)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>55&&Math.abs(e.changedTouches[0].clientY-sy)<70){if(dx<0&&cur<3)goTo(cur+1,document.querySelectorAll('.bn')[cur+1]);else if(dx>0&&cur>0)goTo(cur-1,document.querySelectorAll('.bn')[cur-1]);}},{passive:true});
 
 function doRefresh(){
-  document.getElementById('lastSync').textContent='Sincronizando...';
-  setTimeout(function(){
-    var now=new Date();
-    document.getElementById('lastSync').textContent='✓ '+pad(now.getHours())+':'+pad(now.getMinutes());
-  },800);
+  var now=new Date();
+  document.getElementById('lastSync').textContent='✓ '+pad(now.getHours())+':'+pad(now.getMinutes());
 }
-
-doRefresh();
 </script>
 </body>
 </html>

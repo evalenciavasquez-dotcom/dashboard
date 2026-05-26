@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECOSISTEMA EDUARDO</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+.header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #0f0; padding-bottom: 20px; }
+.time { font-size: 48px; font-weight: bold; color: #0f0; font-family: monospace; margin: 10px 0; text-shadow: 0 0 10px #0f0; }
+.section { margin-bottom: 30px; }
+.title { font-size: 18px; font-weight: bold; color: #0f0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
+.card { background: #111; border: 2px solid #0f0; border-radius: 8px; padding: 15px; margin-bottom: 10px; }
+.card.red { border-color: #f00; }
+.card.orange { border-color: #fa0; }
+.card.blue { border-color: #0af; }
+.card.pink { border-color: #f4f; }
+.value { font-size: 32px; font-weight: bold; margin: 10px 0; font-family: monospace; }
+.value.green { color: #0f0; }
+.value.red { color: #f00; }
+.value.orange { color: #fa0; }
+.value.blue { color: #0af; }
+.desc { font-size: 12px; color: #999; margin-top: 8px; }
+.task { background: #111; border-left: 4px solid #fa0; padding: 12px; margin-bottom: 8px; border-radius: 4px; }
+.task.p1 { border-left-color: #f00; }
+.flag { background: #111; border: 2px solid; border-radius: 6px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; }
+.flag.green { border-color: #0f0; }
+.flag.red { border-color: #f00; }
+.sync { text-align: center; margin-top: 40px; font-size: 12px; color: #666; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div style="font-size: 12px; color: #999; letter-spacing: 3px;">⚡ ECOSISTEMA</div>
+  <div class="time" id="time">09:21:37</div>
+  <div style="font-size: 14px; color: #0f0;">MARTES 26 MAYO 2026</div>
+</div>
+
+<div class="section">
+  <div class="title">💰 FINANZAS MAYO</div>
+  <div class="card">
+    <div style="font-size: 11px; color: #999;">INGRESOS</div>
+    <div class="value green">$4.93M</div>
+    <div class="desc">SETTE + Familia</div>
+  </div>
+  <div class="card red">
+    <div style="font-size: 11px; color: #999;">GASTOS FIJOS</div>
+    <div class="value red">$3.85M</div>
+    <div class="desc">Arriendo + Servicios + MA</div>
+  </div>
+  <div class="card orange">
+    <div style="font-size: 11px; color: #999;">EXCEDENTE</div>
+    <div class="value orange">$1.08M</div>
+    <div class="desc">Antes variables</div>
+  </div>
+  <div class="card blue">
+    <div style="font-size: 11px; color: #999;">SALDO BOA</div>
+    <div class="value blue">$1,495 USD</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="title">🎯 PROYECTOS</div>
+  <div class="card orange">
+    <div style="font-size: 20px; font-weight: 900; color: #fa0;">SETTE</div>
+    <div class="value orange">$5.65M/mes</div>
+    <div class="desc">Fee mensual. Pauta $7.3M aprobada. KPI HOY 2:30pm con Miguel</div>
+  </div>
+  <div class="card orange">
+    <div style="font-size: 20px; font-weight: 900; color: #fa0;">DOBLE AA</div>
+    <div class="value orange">$500K + 12%</div>
+    <div class="desc">Reunión HOY 5pm. Lanzamiento "Estoy Bien" 16 junio</div>
+  </div>
+  <div class="card pink">
+    <div style="font-size: 20px; font-weight: 900; color: #f4f;">GIULIA 🔴 URGENTE</div>
+    <div class="value pink">Lanzamiento 29 mayo</div>
+    <div class="desc">⚠️ Contactar VIRGIN HOY para Grammy</div>
+  </div>
+  <div class="card blue">
+    <div style="font-size: 20px; font-weight: 900; color: #0af;">ANDY G</div>
+    <div class="value blue">Licencia Totoy</div>
+    <div class="desc">VINCERE Electro. Formalizar con Farolatino</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="title">📅 EVENTOS HOY</div>
+  <div class="flag blue">
+    <div><strong>Reunión Miguel SETTE KPI</strong><br><span class="desc">Pauta $7.3M</span></div>
+    <div style="font-size: 16px; font-weight: bold; color: #0af;">2:30 PM</div>
+  </div>
+  <div class="flag orange">
+    <div><strong>Reunión DOBLE AA</strong><br><span class="desc">Fee + Acuerdo</span></div>
+    <div style="font-size: 16px; font-weight: bold; color: #fa0;">5:00 PM</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="title">📋 TAREAS (15 TOTAL)</div>
+  <div class="task p1">🎵 GIULIA - Contactar Virgin Grammy <span style="color: #f00;">[P1 VENCIDA]</span></div>
+  <div class="task p1">📞 MARCEL SELVA - Clipper's TORTTURA <span style="color: #f00;">[P1 VENCIDA 4 DÍAS]</span></div>
+  <div class="task p1">📞 JUAN MAGAN - Taganga/HOKAI <span style="color: #f00;">[P1 HOY]</span></div>
+  <div class="task">📊 MONEYFY - Exportar CSV</div>
+  <div class="task">🎵 CUESTIONARIO - Música/Startups</div>
+  <div class="task">👁️ DOBLE AA - Análisis métricas</div>
+  <div class="task">📋 FINANZAS - Revisar pagos</div>
+  <div class="task">📋 ANDY G - Licencia Totoy</div>
+</div>
+
+<div class="section">
+  <div class="title">🚩 FLAGS</div>
+  <div class="flag green">
+    <div><strong>✓ Pauta SETTE aprobada</strong></div>
+    <div style="color: #0f0;">$7.3M</div>
+  </div>
+  <div class="flag red">
+    <div><strong>✗ Clipper's sin respuesta</strong></div>
+    <div style="color: #f00;">4 días</div>
+  </div>
+  <div class="flag red">
+    <div><strong>✗ Streams DOBLE AA</strong></div>
+    <div style="color: #f00;">24K/60K (40%)</div>
+  </div>
+</div>
+
+<div class="sync">
+  ✓ Dashboard actualizado 26 mayo 09:21 | <a href="#" style="color: #0f0; text-decoration: none;" onclick="location.reload(); return false;">↻ Refrescar</a>
+</div>
+
+<script>
+function updateTime() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const s = String(now.getSeconds()).padStart(2, '0');
+  document.getElementById('time').textContent = h + ':' + m + ':' + s;
+}
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>

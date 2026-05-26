@@ -22,7 +22,7 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2
 .value.orange { color: #fa0; }
 .value.blue { color: #0af; }
 .desc { font-size: 12px; color: #999; margin-top: 8px; }
-.task { background: #111; border-left: 4px solid #fa0; padding: 12px; margin-bottom: 8px; border-radius: 4px; }
+.task { background: #111; border-left: 4px solid #fa0; padding: 12px; margin-bottom: 8px; border-radius: 4px; font-size: 13px; }
 .task.p1 { border-left-color: #f00; }
 .flag { background: #111; border: 2px solid; border-radius: 6px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; }
 .flag.green { border-color: #0f0; }
@@ -34,7 +34,7 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2
 
 <div class="header">
   <div style="font-size: 12px; color: #999; letter-spacing: 3px;">⚡ ECOSISTEMA</div>
-  <div class="time" id="time">09:21:37</div>
+  <div class="time" id="time">09:31:45</div>
   <div style="font-size: 14px; color: #0f0;">MARTES 26 MAYO 2026</div>
 </div>
 
@@ -66,7 +66,7 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2
   <div class="card orange">
     <div style="font-size: 20px; font-weight: 900; color: #fa0;">SETTE</div>
     <div class="value orange">$5.65M/mes</div>
-    <div class="desc">Fee mensual. Pauta $7.3M aprobada. KPI HOY 2:30pm con Miguel</div>
+    <div class="desc">Fee mensual. Pauta $7.3M aprobada. KPI HOY 2:30pm</div>
   </div>
   <div class="card orange">
     <div style="font-size: 20px; font-weight: 900; color: #fa0;">DOBLE AA</div>
@@ -77,11 +77,6 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2
     <div style="font-size: 20px; font-weight: 900; color: #f4f;">GIULIA 🔴 URGENTE</div>
     <div class="value pink">Lanzamiento 29 mayo</div>
     <div class="desc">⚠️ Contactar VIRGIN HOY para Grammy</div>
-  </div>
-  <div class="card blue">
-    <div style="font-size: 20px; font-weight: 900; color: #0af;">ANDY G</div>
-    <div class="value blue">Licencia Totoy</div>
-    <div class="desc">VINCERE Electro. Formalizar con Farolatino</div>
   </div>
 </div>
 
@@ -98,15 +93,24 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2
 </div>
 
 <div class="section">
-  <div class="title">📋 TAREAS (15 TOTAL)</div>
-  <div class="task p1">🎵 GIULIA - Contactar Virgin Grammy <span style="color: #f00;">[P1 VENCIDA]</span></div>
-  <div class="task p1">📞 MARCEL SELVA - Clipper's TORTTURA <span style="color: #f00;">[P1 VENCIDA 4 DÍAS]</span></div>
-  <div class="task p1">📞 JUAN MAGAN - Taganga/HOKAI <span style="color: #f00;">[P1 HOY]</span></div>
-  <div class="task">📊 MONEYFY - Exportar CSV</div>
-  <div class="task">🎵 CUESTIONARIO - Música/Startups</div>
-  <div class="task">👁️ DOBLE AA - Análisis métricas</div>
-  <div class="task">📋 FINANZAS - Revisar pagos</div>
-  <div class="task">📋 ANDY G - Licencia Totoy</div>
+  <div class="title">📋 TAREAS HOY (15 EN VIVO)</div>
+  
+  <div class="task p1">🎵 GIULIA - Contactar Virgin: Grammy + documento <span style="color: #f00;">[P1 VENCIDA]</span></div>
+  <div class="task p1">🎵 GIULIA - Detalles lanzamiento: Operativos <span style="color: #f00;">[P1 VENCIDA]</span></div>
+  <div class="task p1">📞 PUSH MARCEL SELVA (Clipper's) - TORTTURA + HOKAI <span style="color: #f00;">[P1 VENCIDA 4d]</span></div>
+  <div class="task p1">📞 JUAN MAGAN - Seguimiento correo 21 mayo <span style="color: #f00;">[P1 HOY]</span></div>
+  <div class="task p1">📞 JUAN MAGAN - Taganga + HOKAI + scouting <span style="color: #f00;">[P1 HOY]</span></div>
+  
+  <div class="task">📊 MONEYFY: Exportar CSV y subir Drive</div>
+  <div class="task">🎵 CUESTIONARIO: Música, Startups, Vida</div>
+  <div class="task">👁️ SEGUIMIENTO DOBLE AA: Revisar avance</div>
+  <div class="task">📋 REVISAR: Qué hay que pagar esta semana</div>
+  <div class="task">💰 FINANZAS - Revisar pagos semana</div>
+  <div class="task">📊 DOBLE AA - Análisis semanal métricas</div>
+  <div class="task">📋 ANDY G - Formalizar licencia Totoy El Frío</div>
+  <div class="task">📋 ZEIWA - Enviar nuevo NDA a Alejo</div>
+  <div class="task">📋 RAYO Y TOBI - Destrabar Virgin/Guillermo Castro</div>
+  <div class="task">📋 PROYECTOS ABANDONO - L'OMY, Music Labs, Hamurabi, Torttura</div>
 </div>
 
 <div class="section">
@@ -116,8 +120,8 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2
     <div style="color: #0f0;">$7.3M</div>
   </div>
   <div class="flag red">
-    <div><strong>✗ Clipper's sin respuesta</strong></div>
-    <div style="color: #f00;">4 días</div>
+    <div><strong>✗ Clipper's sin respuesta 4 días</strong></div>
+    <div style="color: #f00;">PUSH ASAP</div>
   </div>
   <div class="flag red">
     <div><strong>✗ Streams DOBLE AA</strong></div>
@@ -126,7 +130,7 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2
 </div>
 
 <div class="sync">
-  ✓ Dashboard actualizado 26 mayo 09:21 | <a href="#" style="color: #0f0; text-decoration: none;" onclick="location.reload(); return false;">↻ Refrescar</a>
+  ✓ Datos EN VIVO jalonados de Todoist 26 mayo 09:31 | <a href="#" style="color: #0f0; text-decoration: none;" onclick="location.reload(); return false;">↻ Refrescar</a>
 </div>
 
 <script>
